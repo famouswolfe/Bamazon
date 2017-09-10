@@ -48,7 +48,7 @@ function mainMenu(){
 	.then(function(answer){
 		var query = "SELECT item_quantity FROM product_list WHERE ?"
 		connection.query(query, {response: answer.response2}, function(err, res){
-			if (answer.response2 > 1){
+			if (answer.response2 < 1){
 				console.log("Sorry, item out of stock");
 			} else {
 				console.log("Thank you, your order has been placed");
